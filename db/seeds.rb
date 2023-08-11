@@ -10,14 +10,8 @@
 # If the user doesn't exist then it will create it
 # IF the user does exist then it will skip the first line and update it with the 
 # correct attributes
-puts "What do you want your login email to be?"
-email = gets.chomp
-user = User.where(email: email).first_or_initialize
-puts "What do you want your password to be?"
-password = gets.chomp
-puts "Please confirm your password"
-password_confirmation = gets.chomp
+user = User.where(email: ENV["EMAIL_ADDRESS"]).first_or_initialize
 user.update!( # bang makes this return an error rather than false
-  password: password,
-  password_confirmation: password_confirmation
+  password: ENV["PASSWORD"],
+  password_confirmation: ENV["PASSWORD_CONFIRMATION"]
 )

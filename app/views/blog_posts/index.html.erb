@@ -15,5 +15,5 @@
 <%# The output of whatever code we put here is truested as HTML safe  %>
 <%# %= sanitizes any output %>
 <div class="my-16">
-  <%== pagy_nav(@pagy) %>
+  <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
 </div>

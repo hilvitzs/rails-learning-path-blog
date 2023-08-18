@@ -11,3 +11,9 @@
     <%= blog_post.content %>
   </div>
 <% end %>
+
+<%# The output of whatever code we put here is truested as HTML safe  %>
+<%# %= sanitizes any output %>
+<div class="my-16">
+  <%== pagy_nav(@pagy) %>
+</div>
